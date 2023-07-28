@@ -823,6 +823,11 @@ input[type="range"]{
   margin-bottom: 5px;
 }
 
+.my-2 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
 .-mr-4 {
   margin-right: -1rem;
 }
@@ -973,6 +978,10 @@ input[type="range"]{
 
 .mt-\[3px\] {
   margin-top: 3px;
+}
+
+.mb-3 {
+  margin-bottom: 0.75rem;
 }
 
 .box-border {
@@ -1315,6 +1324,14 @@ input[type="range"]{
 
 .w-screen {
   width: 100vw;
+}
+
+.w-\[50\%\] {
+  width: 50%;
+}
+
+.w-\[45\%\] {
+  width: 45%;
 }
 
 .min-w-0 {
@@ -1965,6 +1982,11 @@ input[type="range"]{
   border-color: rgb(255 255 255 / var(--tw-border-opacity));
 }
 
+.border-black {
+  --tw-border-opacity: 1;
+  border-color: rgb(0 0 0 / var(--tw-border-opacity));
+}
+
 .border-t-transparent {
   border-top-color: transparent;
 }
@@ -2096,6 +2118,11 @@ input[type="range"]{
   background-color: rgb(39 39 42 / var(--tw-bg-opacity));
 }
 
+.bg-red-900 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(127 29 29 / var(--tw-bg-opacity));
+}
+
 .bg-opacity-90 {
   --tw-bg-opacity: 0.9;
 }
@@ -2108,16 +2135,16 @@ input[type="range"]{
   background-image: url('../src/img/fondo-galeria_gradient.jpg');
 }
 
+.bg-\[url\(\'\.\/img\/fondo-galeria_gradient\.jpg\'\)\] {
+  background-image: url('./img/fondo-galeria_gradient.jpg');
+}
+
 .bg-\[url\(\'https\:\/\/laud\.udistrital\.edu\.co\/sites\/default\/files\/imagen-galeria\/2023-02\/LAUD\%20Rock\%20al\%20Parque\%201\.jpg\'\)\] {
   background-image: url('https://laud.udistrital.edu.co/sites/default/files/imagen-galeria/2023-02/LAUD%20Rock%20al%20Parque%201.jpg');
 }
 
 .bg-\[url\(\'https\:\/\/laud\.udistrital\.edu\.co\/sites\/default\/files\/imagen-galeria\/2023-02\/LAUD\%20Rock\%20al\%20Parque\%205\.jpg\'\)\] {
   background-image: url('https://laud.udistrital.edu.co/sites/default/files/imagen-galeria/2023-02/LAUD%20Rock%20al%20Parque%205.jpg');
-}
-
-.bg-\[url\(\'https\:\/\/laud\.udistrital\.edu\.co\/sites\/default\/files\/imagen-galeria\/2023-06\/LAUD\%20BALTHVS\%201\.jpg\'\)\] {
-  background-image: url('https://laud.udistrital.edu.co/sites/default/files/imagen-galeria/2023-06/LAUD%20BALTHVS%201.jpg');
 }
 
 .bg-gradient-to-b {
@@ -2130,14 +2157,6 @@ input[type="range"]{
 
 .bg-gradient-to-t {
   background-image: linear-gradient(to top, var(--tw-gradient-stops));
-}
-
-.bg-\[url\(\'\.\/img\/fondo-galeria_gradient\.jpg\'\)\] {
-  background-image: url('./img/fondo-galeria_gradient.jpg');
-}
-
-.bg-\[url\(\'https\:\/\/autodigital\.com\.co\/wp-content\/uploads\/2021\/12\/Leaf-carretera\.jpg\'\)\] {
-  background-image: url('https://autodigital.com.co/wp-content/uploads/2021/12/Leaf-carretera.jpg');
 }
 
 .from-neutral-700 {
@@ -2176,6 +2195,41 @@ input[type="range"]{
 .via-zinc-900 {
   --tw-gradient-to: rgb(24 24 27 / 0);
   --tw-gradient-stops: var(--tw-gradient-from), #18181b, var(--tw-gradient-to);
+}
+
+.via-red-laud {
+  --tw-gradient-to: rgb(181 0 0 / 0);
+  --tw-gradient-stops: var(--tw-gradient-from), #B50000, var(--tw-gradient-to);
+}
+
+.via-red-900 {
+  --tw-gradient-to: rgb(127 29 29 / 0);
+  --tw-gradient-stops: var(--tw-gradient-from), #7f1d1d, var(--tw-gradient-to);
+}
+
+.via-red-800 {
+  --tw-gradient-to: rgb(153 27 27 / 0);
+  --tw-gradient-stops: var(--tw-gradient-from), #991b1b, var(--tw-gradient-to);
+}
+
+.via-red-700 {
+  --tw-gradient-to: rgb(185 28 28 / 0);
+  --tw-gradient-stops: var(--tw-gradient-from), #b91c1c, var(--tw-gradient-to);
+}
+
+.via-black {
+  --tw-gradient-to: rgb(0 0 0 / 0);
+  --tw-gradient-stops: var(--tw-gradient-from), #000, var(--tw-gradient-to);
+}
+
+.via-gray-500 {
+  --tw-gradient-to: rgb(107 114 128 / 0);
+  --tw-gradient-stops: var(--tw-gradient-from), #6b7280, var(--tw-gradient-to);
+}
+
+.via-neutral-500 {
+  --tw-gradient-to: rgb(115 115 115 / 0);
+  --tw-gradient-stops: var(--tw-gradient-from), #737373, var(--tw-gradient-to);
 }
 
 .to-black {
@@ -2587,6 +2641,11 @@ input[type="range"]{
 .text-xs {
   font-size: 0.75rem;
   line-height: 1rem;
+}
+
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
 }
 
 .font-bold {
@@ -4061,8 +4120,17 @@ input[type="range"]{
     width: 30%;
   }
 
+  .sm\:w-\[35\%\] {
+    width: 35%;
+  }
+
   .sm\:text-5xl {
     font-size: 3rem;
+    line-height: 1;
+  }
+
+  .sm\:text-6xl {
+    font-size: 3.75rem;
     line-height: 1;
   }
 }
@@ -4112,6 +4180,10 @@ input[type="range"]{
     height: 3rem;
   }
 
+  .md\:h-10 {
+    height: 2.5rem;
+  }
+
   .md\:w-12 {
     width: 3rem;
   }
@@ -4127,6 +4199,10 @@ input[type="range"]{
 
   .md\:w-full {
     width: 100%;
+  }
+
+  .md\:w-10 {
+    width: 2.5rem;
   }
 
   .md\:grid-cols-2 {
@@ -4322,6 +4398,11 @@ input[type="range"]{
   .lg\:text-lg {
     font-size: 1.125rem;
     line-height: 1.75rem;
+  }
+
+  .lg\:text-sm {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
   }
 }
 
