@@ -1,0 +1,50 @@
+.swiper-container-container {
+  overflow-x: scroll;
+  max-width: 100%;
+}
+
+.swiper-container {
+  display: flex;
+  flex-wrap: nowrap;
+  position: relative;
+}
+
+.swiper-container-container::-webkit-scrollbar {
+  width: 0.5em;
+}
+
+.swiper-container-container::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.swiper-container-container::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}
+
+.swiper-pagination-bullet {
+  background-color: #B50000;
+  width: 10px;
+  height: 10px;
+}
+
+.text-card-preview {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.no-scroll {
+  overflow-y: hidden;
+}
+
+input:checked {
+  background-color: #000;
+  /* bg-green-500 */
+}
+
+input:checked~span:last-child {
+  --tw-translate-x: 3.3rem;
+  /* translate-x-7 */
+}
