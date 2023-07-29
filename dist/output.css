@@ -1309,6 +1309,26 @@ input[type="range"]{
   width: 100vw;
 }
 
+.w-\[100\%\] {
+  width: 100%;
+}
+
+.w-\[40\%\] {
+  width: 40%;
+}
+
+.w-\[35\%\] {
+  width: 35%;
+}
+
+.w-\[30\%\] {
+  width: 30%;
+}
+
+.w-\[28\%\] {
+  width: 28%;
+}
+
 .min-w-0 {
   min-width: 0px;
 }
@@ -2115,6 +2135,14 @@ input[type="range"]{
   background-image: linear-gradient(to top, var(--tw-gradient-stops));
 }
 
+.bg-gradient-to-tr {
+  background-image: linear-gradient(to top right, var(--tw-gradient-stops));
+}
+
+.bg-gradient-to-tl {
+  background-image: linear-gradient(to top left, var(--tw-gradient-stops));
+}
+
 .from-neutral-700 {
   --tw-gradient-from: #404040;
   --tw-gradient-to: rgb(64 64 64 / 0);
@@ -2130,6 +2158,12 @@ input[type="range"]{
 .from-transparent {
   --tw-gradient-from: transparent;
   --tw-gradient-to: rgb(0 0 0 / 0);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.from-red-laud {
+  --tw-gradient-from: #B50000;
+  --tw-gradient-to: rgb(181 0 0 / 0);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
 
@@ -2163,6 +2197,10 @@ input[type="range"]{
 
 .to-transparent {
   --tw-gradient-to: transparent;
+}
+
+.to-red-laud {
+  --tw-gradient-to: #B50000;
 }
 
 .bg-contain {
