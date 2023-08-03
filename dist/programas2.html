@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta
+		name="La emisora LAUD 90.4 FM ESTÉREO está enfocada a dar una nueva alternativa a nivel cultural y educativo para todos los oyentes." />
+
+	<script src="/node_modules/tw-elements/dist/js/index.min.js"></script>
+	<link href="https://cdn.jsdelivr.net/npm/nanogallery2@3.0.5/dist/css/nanogallery2.min.css" rel="stylesheet" />
+
+	<!-- links styles css -->
+	<link rel="stylesheet" href="styles.css" />
+	<link href="./output.css" rel="stylesheet" />
+
+	<!-- link font Montserrat -->
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+
+	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" />
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.3/photoswipe.min.css" />
+	<link rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.3/default-skin/default-skin.min.css" />
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+	<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+	<script src="https://cdn.jsdelivr.net/npm/nanogallery2@3.0.5/dist/jquery.nanogallery2.min.js "></script>
+
+	<title>LAUD</title>
+</head>
+
+<body>
+	<!-- Nav Bar -->
+	<nav
+		class="fixed z-20 top-0 flex w-full flex-wrap items-center justify-between bg-neutral-900 bg-opacity-90 py-4 md:py-2 text-neutral-200 shadow-lg lg:flex-wrap lg:justify-start"
+		data-te-navbar-ref>
+		<div class="flex w-full flex-wrap items-center justify-between px-6">
+			<a class="pr-2 text-xl font-semibold" href="#">
+				<img class="h-10" src="./img/logo.png" alt="Logo LAUD" />
+			</a>
+			<div class="flex items-center">
+				<!-- "On Air" button for mobil devices -->
+				<label class="flex items-center relative w-max cursor-pointer select-none md:hidden">
+					<input type="checkbox" onchange="toggleDiv(this.checked)"
+						class="appearance-none transition-colors cursor-pointer w-20 h-6 rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-black focus:ring-blue-500 bg-red-laud" />
+					<span id="onAirBtn" class="absolute font-bold text-xs right-2">
+						En vivo
+					</span>
+					<span id="offAirBtn" class="absolute font-bold text-xs right-7 hidden">
+						Cerrar
+					</span>
+					<span id="onAirBall"
+						class="w-5 h-5 right-14 absolute rounded-full transform transition-transform bg-white"></span>
+				</label>
+				<!-- END: "On Air" button for mobil devices -->
+				<!-- Hamburguer button: -->
+				<button id="hamburguer"
+					class="block border-0 bg-transparent py-2 px-2.5 -mr-4 text-neutral-200 hover:no-underline hover:shadow-none focus:no-underline focus:shadow-none focus:outline-none focus:ring-0 lg:hidden"
+					type="button" data-te-collapse-init data-te-target="#navbarSupportedContent4"
+					aria-controls="navbarSupportedContent4" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="[&>svg]:w-7">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-7 w-7">
+							<path fill-rule="evenodd"
+								d="M3 6.75A.75.75 0 013.75 6h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 6.75zM3 12a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 12zm0 5.25a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75a.75.75 0 01-.75-.75z"
+								clip-rule="evenodd" />
+						</svg>
+					</span>
+				</button>
+				<!-- END: Hamburger button -->
+			</div>
+			<div class="!visible hidden basis-[100%] items-center lg:!flex lg:basis-auto transition-all ease-in"
+				id="navbarSupportedContent4" data-te-collapse-item>
+				<!-- Right elements -->
+				<div class="md:relative flex">
+					<ul
+						class="mt-10 md:mt-0 md:pt-2 list-style-none flex flex-col pl-0 lg:flex-row font-bold text-xl md:text-sm w-full h-screen md:h-12"
+						data-te-navbar-nav-ref>
+						<li class="mt-4 mb-8 md:hidden" data-te-nav-item-ref>
+							<label class="relative block">
+								<input type="text" id="searchbox-mobile"
+									class="w-full py-2 pl-10 bg-transparent placeholder:text-gray-500 font-light text-base border-b-2 border-gray-500 outline-none"
+									placeholder="Buscar" />
+								<span class="absolute inset-y-0 left-0 flex items-center pl-3">
+									<img src="./img/magnifying-glass-solid.svg" alt="Buscar" class="h-5 w-5 opacity-60" />
+								</span>
+							</label>
+						</li>
+						<li class="p-2 md:mt-0" data-te-nav-item-ref>
+							<a class="disabled:text-black/30 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
+								href="#" data-te-nav-link-ref>Inicio</a>
+						</li>
+						<li class="p-2" data-te-nav-item-ref>
+							<a class="p-0 opacity-60 hover:opacity-80 focus:opacity-80 disabled:text-black/30 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
+								href="#" data-te-nav-link-ref>Programación</a>
+						</li>
+						<li class="p-2" data-te-nav-item-ref>
+							<a class="p-0 opacity-60 hover:opacity-80 focus:opacity-80 disabled:text-black/30 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
+								href="#" data-te-nav-link-ref>Universidad</a>
+						</li>
+						<li class="p-2" data-te-nav-item-ref>
+							<a class="p-0 opacity-60 hover:opacity-80 focus:opacity-80 disabled:text-black/30 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
+								href="#" data-te-nav-link-ref>Actualidad</a>
+						</li>
+						<li class="p-2" data-te-nav-item-ref>
+							<a class="p-0 opacity-60 hover:opacity-80 focus:opacity-80 disabled:text-black/30 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
+								href="#" data-te-nav-link-ref>Galería</a>
+						</li>
+						<li class="p-2" data-te-nav-item-ref>
+							<a class="p-0 opacity-60 hover:opacity-80 focus:opacity-80 disabled:text-black/30 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
+								href="#" data-te-nav-link-ref>Música</a>
+						</li>
+						<li class="p-2" data-te-nav-item-ref>
+							<a class="p-0 opacity-60 hover:opacity-80 focus:opacity-80 disabled:text-black/30 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
+								href="#" data-te-nav-link-ref>Cultura</a>
+						</li>
+						<li class="p-2" data-te-nav-item-ref>
+							<a class="p-0 opacity-60 hover:opacity-80 focus:opacity-80 disabled:text-black/30 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
+								href="#" data-te-nav-link-ref>Cubrimientos</a>
+						</li>
+						<li class="p-2 hidden md:block" data-te-nav-item-ref>
+							<label class="flex items-center relative w-max cursor-pointer select-none">
+								<input type="checkbox" onchange="toggleDiv(this.checked)"
+									class="appearance-none transition-colors cursor-pointer w-20 h-6 rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-black focus:ring-blue-500 bg-red-laud" />
+								<span id="onAirBtn" class="absolute font-bold text-xs right-2">
+									En vivo
+								</span>
+								<span id="offAirBtn" class="absolute font-bold text-xs right-7 hidden">
+									Cerrar
+								</span>
+								<span id="onAirBall"
+									class="w-5 h-5 right-14 absolute rounded-full transform transition-transform bg-white"></span>
+							</label>
+						</li>
+						<li class="p-2 mt-6 md:hidden" data-te-nav-item-ref>
+							<p class="py-3 opacity-60 font-normal text-base">Síguenos</p>
+							<div class="grid grid-cols-8 gap-0">
+								<div>
+									<img class="h-8" src="./img/social/FACE.png" alt="Facebook logo" />
+								</div>
+								<div>
+									<img class="h-8" src="./img/social/TWITER.png" alt="Twitter logo" />
+								</div>
+								<div>
+									<img class="h-8" src="./img/social/INSTA.png" alt="Instagram logo" />
+								</div>
+								<div>
+									<img class="h-8" src="./img/social/YT.png" alt="Youtube logo" />
+								</div>
+								<div>
+									<img class="h-8" src="./img/social/TICTOK.png" alt="Tiktok logo" />
+								</div>
+							</div>
+						</li>
+						<li class="p-2 hidden md:block" data-te-nav.item-ref>
+							<a class="">
+								<svg
+									class="-mt-2 opacity-60 hover:opacity-80 focus:opacity-80 disabled:text-black/30 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
+									xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor" width="36" height="36">
+									<path stroke-linecap="round" stroke-linejoin="round"
+										d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+								</svg>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<!-- Right elements -->
+			</div>
+			<!-- Collapsible wrapper -->
+		</div>
+	</nav>
+	<!-- Nav Bar End -->
+
+	<!-- Programacion -->
+	<section class="before:bg-black before:-z-10 before:absolute before:w-full before:h-full relative">
+		<div class="wrap pt-10 pb-36 text-white">
+			<div class="text-center my-20">
+				<h1 class="text-4xl md:text-5xl font-bold">Programación</h1>
+				<p class="text-xs md:text-base">Encuentra los mejores momentos de diferentes eventos <br> culturales,
+					distritales y de nuestra
+					Universidad
+					Distrital</p>
+			</div>
+			<div class="store-wrapper grid justify-center gap-20">
+				<div
+					class="category_list gap-3 flex flex-wrap mx-auto max-w-lg md:max-w-none text-center justify-center items-center text-sm md:text-base font-semibold px-2">
+					<button class="category_item bg-gray-laud-card-dark py-1 px-3 lg:px-4 rounded-lg"
+						category="lunes">Lunes</button>
+					<button class="category_item bg-gray-laud-card-dark py-1 px-3 lg:px-4 rounded-lg"
+						category="martes">Martes</button>
+					<button class="category_item bg-gray-laud-card-dark py-1 px-3 lg:px-4 rounded-lg"
+						category="miercoles">Miercoles</button>
+					<button class="category_item bg-gray-laud-card-dark py-1 px-3 lg:px-4 rounded-lg"
+						category="jueves">Jueves</button>
+					<button class="category_item bg-gray-laud-card-dark py-1 px-3 lg:px-4 rounded-lg"
+						category="viernes">Viernes</button>
+					<button class="category_item bg-gray-laud-card-dark py-1 px-3 lg:px-4 rounded-lg"
+						category="sabado">Sabado</button>
+					<button class="category_item bg-gray-laud-card-dark py-1 px-3 lg:px-4 rounded-lg"
+						category="domingo">Domingo</button>
+				</div>
+				<section class="products-list gridGaleria justify-center text-white px-5 gap-6">
+					<div class="product-item" category="miercoles" category2="viernes">
+						<div
+							class="bg-[url('img/programas/revista_de_la_manana.jpg')] bg-cover bg-center flex items-end justify-center">
+							<div class="text-center bg-black w-full py-3 bg-opacity-30">
+								<p class="text-lg">
+									7:30 - 10:00
+								</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="product-item" category="sabado">
+						<div
+							class="bg-[url('img/programas/musica_y_musicos_de_colombia.jpg')] bg-cover bg-center flex items-end justify-center">
+							<div class="text-center bg-black w-full py-3 bg-opacity-30">
+								<p class="text-lg">
+									7:30 - 10:00
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class="product-item" category="miercoles" category2="viernes">
+						<div class="bg-[url('img/programas/LUPA_LABORAL.jpg')] bg-cover bg-center flex items-end justify-center">
+							<div class="text-center bg-black w-full py-3 bg-opacity-30">
+								<p class="text-lg">
+									7:30 - 10:00
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class="product-item" category="sabado">
+						<div
+							class="bg-[url('img/programas/REVISTA_UNIVERSITARIA.jpg')] bg-cover bg-center flex items-end justify-center">
+							<div class="text-center bg-black w-full py-3 bg-opacity-30">
+								<p class="text-lg">
+									7:30 - 10:00
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class="product-item" category="miercoles" category2="viernes">
+						<div class="bg-[url('img/programas/IRRADIARTE.jpg')] bg-cover bg-center flex items-end justify-center">
+							<div class="text-center bg-black w-full py-3 bg-opacity-30">
+								<p class="text-lg">
+									7:30 - 10:00
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class="product-item" category="sabado" category2="viernes">
+						<div
+							class="bg-[url('img/programas/musica_iberoamericana_y_del_caribe.jpg')] bg-cover bg-center flex items-end justify-center">
+							<div class="text-center bg-black w-full py-3 bg-opacity-30">
+								<p class="text-lg">
+									7:30 - 10:00
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class="product-item" category="miercoles" category2="sabado">
+						<div
+							class="bg-[url('img/programas/FESTIVALES_JAZZ_DEL_MUNDO.jpg')] bg-cover bg-center flex items-end justify-center">
+							<div class="text-center bg-black w-full py-3 bg-opacity-30">
+								<p class="text-lg">
+									7:30 - 10:00
+								</p>
+							</div>
+						</div>
+					</div>
+			</div>
+		</div>
+		<div
+			class="before:bg-gradient-to-b to-black from-transparent before:absolute before:w-full before:h-full before:z-10 absolute top-0 -z-10">
+			<img src="img/cerrar-artista-haciendo-musica.jpg" class="grayscale opacity-50">
+		</div>
+	</section>
+	<!-- Programacion End -->
+
+
+	<!-- Footer -->
+	<div class="grid grid-cols-1 md:grid-cols-3 gap-1 pb-20 p-4 text-gray-400 bg-gray-laud-card-dark">
+		<div>
+			<h3 class="text-base font-bold mt-5 text-white">
+				LAUD 90.4 FM ESTÉREO
+			</h3>
+			<p class="text-sm">
+				Tel: <a href="tel:+576012877160">+57 (601) 2877160</a> -
+				<a href="tel:+576012877161">+57 (601) 2877161</a> <br />Calle 31 #
+				6-42 Piso: 8 <br />Bogotá DC - República de Colombia
+			</p>
+			<h3 class="text-sm font-bold mt-3">Redes sociales</h3>
+			<div class="grid grid-cols-11 gap-0 mt-2">
+				<div>
+					<img class="h-7" src="./img/social/FACE.png" alt="Facebook logo" />
+				</div>
+				<div>
+					<img class="h-7" src="./img/social/TWITER.png" alt="Twitter logo" />
+				</div>
+				<div>
+					<img class="h-7" src="./img/social/INSTA.png" alt="Instagram logo" />
+				</div>
+				<div>
+					<img class="h-7" src="./img/social/YT.png" alt="Youtube logo" />
+				</div>
+				<div>
+					<img class="h-7" src="./img/social/TICTOK.png" alt="Tiktok logo" />
+				</div>
+			</div>
+			<div class="border-b-2 border-gray-600 py-3 mr-28 md:hidden"></div>
+		</div>
+		<div>
+			<h3 class="text-base font-bold mt-5 mb-2 text-white">
+				Universidad Distrital<br />
+				Francisco José de Caldas<br />
+				NIT. 899.999.230.7
+			</h3>
+			<p class="text-xs mb-1">
+				Institución de Educación Superior sujeta a inspección y vigilancia por
+				el Ministerio de Educación Nacional.
+			</p>
+			<p class="text-xs">
+				<a href="https://www.alcaldiabogota.gov.co/sisjur/normas/Norma1.jsp?i=3499">Acuerdo de creación N° 10 de 1948
+					del Concejo de Bogotá</a><br />
+				<a
+					href="https://autoevaluacionyacreditacion.udistrital.edu.co/sites/acreditacion/files/documentos/Resolucion%20MEN%20023653%20del%2010%20de%20diciebmre%20de%202021.pdf">Acreditación
+					Institucional de Alta Calidad - Resolución N° 023653
+					del 10 de diciembre del 2021</a><br />
+			</p>
+		</div>
+		<div>
+			<h3 class="text-base font-bold mt-5 text-white">Representante Legal</h3>
+			<ul class="text-sm">
+				<li class="font-bold text-white">
+					Rector Dr. Giovanny Mauricio Tarazona Bermúdez
+				</li>
+				<li>
+					<a href="mailto:rectoria@udistrital.edu.co ">rectoria@udistrital.edu.co
+					</a>
+				</li>
+				<li>
+					<a target="_blank"
+						href="https://www.google.com.co/maps/place/Cra.+7+%2340b-53,+Bogot%C3%A1/@4.6280856,-74.0674698,17z/data=!3m1!4b1!4m5!3m4!1s0x8e3f9a287591013f:0x5cce5fbab6b77b9b!8m2!3d4.6280856!4d-74.0652811?hl=es"><i
+							class="fa fa-map-marker" aria-hidden="true"></i> Calle 13 # 31
+						-75 <br />Bogotá D.C. - República de Colombia</a>
+				</li>
+				<li><strong>Código Postal:</strong> 111611 - 111611537</li>
+				<li>
+					<i class="fa fa-phone" aria-hidden="true"></i>
+					<a href="https://centroderelevo.gov.co/632/w3-channel.html"
+						title="Atención a usuarios del Centro De Relevo"><strong> Atención a usuarios del Centro De
+							Relevo:</strong><br />(+57) 6013238314
+					</a>
+				</li>
+				<li>
+					<i class="fa fa-phone" aria-hidden="true"></i><a href="http://reclamos.udistrital.edu.co:8080/"
+						title="Número de contacto Oficina de Quejas, Reclamos y Atención al Ciudadano">
+						(+57) 6013239300
+					</a>
+					ext: 1421 - (+57) 6013238340
+				</li>
+				<li>
+					<i class="fa fa-clock-o"></i> Lunes a viernes de 8:00 a.m. a 5:00
+					p.m.
+				</li>
+				<li>
+					<a href="mailto:atencion@udistrital.edu.co" title="Correo electrónico de atención al ciudadano"><i
+							class="fa fa-envelope" aria-hidden="true"></i>
+						<strong>Atención al ciudadano: </strong>atencion@udistrital.edu.co</a>
+				</li>
+				<li>
+					<a href="mailto:notificacionjudicial@udistrital.edu.co"
+						title="correo electrónico para notificaciones judiciales"><i class="fa fa-envelope" aria-hidden="true"></i>
+						<strong>Notificaciones judiciales: </strong>notificacionjudicial@udistrital.edu.co
+					</a>
+				</li>
+				<li>
+					<a href="http://www.udistrital.edu.co/directorio" title="Directorio institucional"><i class="fa fa-phone"
+							aria-hidden="true"></i> Directorio
+						institucional</a>
+				</li>
+			</ul>
+			<h3 class="text-sm font-bold mt-3">Redes sociales</h3>
+			<div class="grid grid-cols-11 gap-0 mt-2">
+				<div>
+					<a href="https://www.facebook.com/UniversidadDistrital">
+						<img class="h-7" src="./img/social/FACE.png" alt="Facebook logo" />
+					</a>
+				</div>
+				<div>
+					<a href="https://twitter.com/udistrital">
+						<img class="h-7" src="./img/social/TWITER.png" alt="Twitter logo" />
+					</a>
+				</div>
+				<div>
+					<a href="https://instagram.com/universidaddistrital"><img class="h-7" src="./img/social/INSTA.png"
+							alt="Instagram logo" /></a>
+				</div>
+				<div>
+					<a href="https://www.youtube.com/user/udistritaltv"><img class="h-7" src="./img/social/YT.png"
+							alt="Youtube logo" /></a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- END: Footer-->
+
+	<!-- Section Player -->
+	<div id="videoPlayer" class="fixed bottom-0 w-full grid-cols-1 md:grid-cols-2 h-60 z-20 hidden">
+		<iframe title="On Air" class="w-full h-full"
+			src="https://kaltura.udistrital.edu.co/html5/html5lib/v2.85/mwEmbedFrame.php/p/102/uiconf_id/23448172/entry_id/0_fun75osg?wid=_102&iframeembed=true&playerId=kaltura_player_1646687163&entry_id=0_fun75osg"
+			style="border: none; overflow: hidden" allowfullscreen="true"
+			allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+	</div>
+
+	<div id="audioPlayer"
+		class="fixed bottom-0 right-0 w-full bg-neutral-900 bg-opacity-95 z-20 flex justify-between animate__animated animate__slideInUp">
+		<div
+			class="relative bottom-0 right-0 w-screen bg-neutral-900 bg-opacity-95 z-20 flex justify-between border-t-2 border-red-laud md:px-36 py-2 pl-3">
+			<div class="flex items-center w-[75%] md:w-fit">
+				<img class="h-11" src="./img/programas/MUSICA_IBEROAMERICANA_Y_DEL_CARIBE.jpg" alt="Cover programa" />
+				<span class="pl-2 text-xs md:text-sm text-white w-full">En Vivo:<br />
+					<div class="overflow-hidden">
+						<div class="animate-marqueesdasdf">
+							<span class="inline-block font-bold">Música Iberoaméricana y del Caribe</span>
+						</div>
+					</div>
+				</span>
+			</div>
+			<div class="flex items-center pr-3">
+				<button class="w-7 h-7 md:w-12 md:h-12 rounded-full border-2 border-red-laud-play-button">
+					<svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24">
+						<path d="M8 5v14l11-7z" />
+					</svg>
+				</button>
+			</div>
+			<div class="hidden md:flex md:items-center md:justify-center">
+				<div>
+					<button class="w-7 h-7 rounded-full p-1 border-2 border-white mx-2">
+						<img src="./img/volume.png" alt="volume icon" />
+					</button>
+				</div>
+				<div>
+					<input type="range" class="appearance-none w-24 h-1 bg-white rounded-full custom-thumb" />
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- END: Section Player -->
+
+	<script src="main.js"></script>
+</body>
+
+</html>

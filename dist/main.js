@@ -269,6 +269,77 @@ $(document).ready(function () {
   });
 });
 
+$(document).ready(function () {
+  // AGREGANDO CLASE ACTIVE AL PRIMER ENLACE ====================
+  $('.category_list .category_item[category="martes"]').addClass("bg-red-700");
+
+  // FILTRANDO PRODUCTOS  ============================================
+
+  $(".category_item").click(function () {
+    var catProduct = $(this).attr("category");
+
+    // AGREGANDO CLASE ACTIVE AL ENLACE SELECCIONADO
+    $(".category_item").removeClass("bg-red-700");
+    $(this).addClass("bg-red-700");
+
+    // OCULTANDO PRODUCTOS =========================
+    $(".product-item").css("transform", "scale(0)");
+    function hideProduct() {
+      $(".product-item").hide();
+    }
+    setTimeout(hideProduct, 400);
+
+    // MOSTRANDO PRODUCTOS =========================
+    function showProduct() {
+      $('.product-item[category="' + catProduct + '"]').show();
+      $('.product-item[category2="' + catProduct + '"]').show();
+      $('.product-item[category="' + catProduct + '"]').css(
+        "transform",
+        "scale(1)",
+      );
+      $('.product-item[category2="' + catProduct + '"]').css(
+        "transform",
+        "scale(1)",
+      );
+    }
+    setTimeout(showProduct, 400);
+  });
+
+  // MOSTRANDO TODOS LOS PRODUCTOS =======================
+
+  $('.category_item[category="martes"]').click(function () {
+    function showAll() {
+      $(".product-item").show();
+      $(".product-item").css("transform", "scale(1)");
+    }
+    setTimeout(showAll, 400);
+  });
+
+  $('.category_item[category="lunes"]').click(function () {
+    function showAll() {
+      $(".product-item").show();
+      $(".product-item").css("transform", "scale(1)");
+    }
+    setTimeout(showAll, 400);
+  });
+
+  $('.category_item[category="jueves"]').click(function () {
+    function showAll() {
+      $(".product-item").show();
+      $(".product-item").css("transform", "scale(1)");
+    }
+    setTimeout(showAll, 400);
+  });
+
+  $('.category_item[category="domingo"]').click(function () {
+    function showAll() {
+      $(".product-item").show();
+      $(".product-item").css("transform", "scale(1)");
+    }
+    setTimeout(showAll, 400);
+  });
+});
+
 function toggleDiv(btnState) {
   console.log(btnState);
   let audioPlayer = document.getElementById("audioPlayer");
