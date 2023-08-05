@@ -2267,10 +2267,6 @@ input[type="range"]{
   background-image: url('img/programas/musica_y_musicos_de_colombia.jpg');
 }
 
-.bg-\[url\(\'img\/programas\/revista_de_la_manana\.jpg\'\)\] {
-  background-image: url('img/programas/revista_de_la_manana.jpg');
-}
-
 .bg-gradient-to-b {
   background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
 }
